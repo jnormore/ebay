@@ -54,7 +54,7 @@ module Ebay #:nodoc:
 
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
-    self.use_sandbox = false
+    self.use_sandbox = ENV.has_key?('EBAY_SANDBOX') ? ENV['EBAY_SANDBOX'] : false
 
     # Make the default site US
     self.site_id = 0
